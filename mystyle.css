@@ -1,7 +1,13 @@
 body {
-    font-family: "Consolas", "Lucida Console" monospace;
     background-color: lightblue;
+}
+
+main{
+    font-family: "Consolas", "Lucida Console", monospace;
     min-width: 500px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
 
 title {
@@ -10,5 +16,42 @@ title {
 
 h1 {
     color: black;
+    text-align: center;
     margin: auto;
 }
+
+/* pasted nav bar code */
+ul {
+    font-family: "Consolas", "Lucida Console", monospace;
+    position: fixed;
+    top: 0;
+    left: -0.2%;
+    width: 100.3%;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    font-family: "Consolas", "Lucida Console", monospace;
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+  .active {
+    background-color: darkcyan;
+  }
