@@ -31,11 +31,11 @@ ul {
     margin: auto;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
   }
   
   li {
     font-family: "Consolas", "Lucida Console", monospace;
+    margin: auto;
     float: left;
   }
   
@@ -49,9 +49,9 @@ ul {
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: #111;
+    color: #111;
   }
 
   .active {
-    background-color: darkcyan;
+    background-color: #333;
   }
