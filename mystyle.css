@@ -10,14 +10,46 @@ main{
     padding: 10px;
 }
 
+article{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 title {
     margin: auto;
 }
 
 h1 {
+    font-size: 36pt;
     color: black;
     text-align: center;
     margin: auto;
+}
+
+h2 {
+    font-size: 24pt;
+}
+
+h3 {
+    font-size: 18pt;
+    margin-bottom: 0px;
+}
+
+h4 {
+    font-size: 14pt;
+    margin-bottom: 0px;
+}
+
+a {
+    color: blue;
+    padding-bottom: 0%;
+    padding-top: 0%;
+    transition: 0.25s;
+}
+
+a:hover {
+    color: darkblue;
+    font-size: 105%;
 }
 
 /* pasted nav bar code */
