@@ -83,7 +83,48 @@
         document.getElementById("time").innerHTML += "AM"
     }
 
-    // const text = 'v_cat_'
+
+    const textstorage = ['v', '_', 'c', 'a', 't', '_'];
+    const textstorage2 = textstorage
+    const glitchchars = ['$', '%', '&', '*', '@', '!'];
+    var output = "";
+    var progress = 0;
+    const length = text.length;
+
+    function rebuild() {
+        for (let i = 0; i < 5; i++) {
+            const text = text + textstorage[i]
+        }
+    }
+
+    rebuild();
+
+    function glitch() {
+        if(progress >= 20) {
+            return;
+        }
+        var randgltich = Math.floor(Math.random() * glitchchars.length)
+        var randplace = Math.floor(Math.random() * text.length)
+        for (let i = 0; i < 5; i++) {
+            if (swapped = true) {
+                textstorage2 = textstorage
+                swapped = false
+                rebuild();
+            }
+            else if (randplace = i) {
+                textstorage2[i] = glitchchars[i]
+                rebuild();
+                const swapped = true
+            }
+            
+        }
+    }
+
+    for (let i = 0; i < 1000; i++) {
+        glitch();
+    }
+
+    // const text = 'v_cat_';
     // const alphaCaps = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', "'"];
     // const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', "'"];
     // var output = "";
