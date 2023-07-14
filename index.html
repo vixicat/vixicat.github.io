@@ -26,8 +26,6 @@
         welcome, stay a while ... or dont.
     </h2>
 
-    <p id="time"></p>
-
     <p>
         wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow wow 
     </p>
@@ -65,6 +63,12 @@
 </main>
 
 <script>
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // just a time grabber and updater every time the page is opened
     var currentTime = new Date()
     var hours = currentTime.getHours()
     var minutes = currentTime.getMinutes()
@@ -83,74 +87,65 @@
         document.getElementById("time").innerHTML += "AM"
     }
 
+    // duration is equal to the number of cycles it runs, which as of right now takes abt 1.3 seconds each
+    var duration = 100
 
-    const textstorage = ['v', '_', 'c', 'a', 't', '_'];
-    const textstorage2 = textstorage
-    const glitchchars = ['$', '%', '&', '*', '@', '!'];
+    var textstorage2 = ['v', '_', 'c', 'a', 't', '_'];
+    var glitchchars = ['$', '%', '&', '*', '@', '!', '+', '=', 'hiya', '#', '?', 'nya'];
     var output = "";
     var progress = 0;
+    var text = "";
     const length = text.length;
 
+    // takes the text apart and puts it back together with the glitch portion in it, then puts it onto the page
     function rebuild() {
-        for (let i = 0; i < 5; i++) {
-            const text = text + textstorage[i]
+        text = "";
+        for (let i = 0; i < 6; i++) {
+            text += textstorage2[i];
+            document.getElementById("text").innerHTML = text;
         }
     }
 
+    console.log("stop looking at my terrible code")
     rebuild();
 
+    // gets a random character and position and then substitutes accordingly, then calls rebuild func
     function glitch() {
-        if(progress >= 20) {
-            return;
+        var randgltich = Math.floor(Math.random() * glitchchars.length);
+        var randplace = Math.floor(Math.random() * text.length);
+        for (let i = 0; i < 6; i++) {
+            if (i == randplace) {
+                textstorage2[i] = glitchchars[randgltich];
+                var swapped = true
+            }    
         }
-        var randgltich = Math.floor(Math.random() * glitchchars.length)
-        var randplace = Math.floor(Math.random() * text.length)
-        for (let i = 0; i < 5; i++) {
-            if (swapped = true) {
-                textstorage2 = textstorage
-                swapped = false
-                rebuild();
-            }
-            else if (randplace = i) {
-                textstorage2[i] = glitchchars[i]
-                rebuild();
-                const swapped = true
-            }
-            
+        console.log("randplace:", randplace)
+        rebuild();
+    }
+
+    // sets it back to normal (there is technically a bug here with swapped = true instead of swapped == true but idc)
+    function unglitch() {
+        if (swapped = true) {
+            textstorage2 = ['v', '_', 'c', 'a', 't', '_'];
+            swapped = false;
+            rebuild();
         }
     }
 
-    for (let i = 0; i < 1000; i++) {
-        glitch();
+    // the run function which has to be set inside an async to have await commands
+    async function glitchrun() {
+        for (let i = 0; i < duration; i++) {
+            await sleep(500)
+            console.log(i)
+            glitch();
+            await sleep(125)
+            unglitch();
+            await sleep(750)
+        }
     }
 
-    // const text = 'v_cat_';
-    // const alphaCaps = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', "'"];
-    // const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', "'"];
-    // var output = "";
-    // var progress = 0;
-    // const length = text.length;
+    // runs the glitch thingy
+    glitchrun();
 
-    // function glitch() {
-    //     if(progress >= len) {
-    //         return;
-    //     }
-    //     var randnumber = Math.floor(Math.random() * alpha.length)
-    //     if (alpha[randnumber] == text[progress] || alphaCaps[randnumber] == text[progress]) {
-    //         output += text[progress];
-    //         document.getElementById("text").innerHTML = `${output}`
-    //         progress++;
-    //     } else {
-    //         document.getElementById("text").innerHTML = `${output}${alpha[randomNums]}`
-    //     }
-    //     requestAnimationFrame(glitch)
-    // }
-
-    // window.addEventListener("load",function() {
-    //     document.getElementById("but").addEventListener("click",function() {
-    //         this.hidden=true;
-    //         glitch();
-    //     });
-    // })
 </script>
 </html>

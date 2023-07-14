@@ -40,6 +40,10 @@ h4 {
     margin-bottom: 0px;
 }
 
+p {
+  margin: 0px auto;
+}
+
 a {
     color: blue;
     padding-bottom: 0%;

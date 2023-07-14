@@ -8,15 +8,16 @@
     <li><a href="./index.html">home</a></li>
     <li><a href="./projects.html">projects</a></li>
     <li><a class="active" href="./gaming.html">gaming</a></li>
+    <li id="time" style="float:right; text-align: center; padding: 14px 16px; color: white;"></li>
     <li style="float:right"><a href="./about.html">about</a></li>
 </ul>
 
 <main>
 
-    <h1 style="font-size: 24pt";>welcome to my gaming achievements hall</h1>
-    <!-- Destiny -->
+    <h1 style="font-size: 24pt; margin-bottom: 36px;">welcome to my gaming achievements hall</h1>
 
-    <h2>Destiny Achievements</h2>
+    <!-- Destiny -->
+    <h2 style="margin: 0px auto;">Destiny 2</h2>
     <article>
         <h4><a href="https://raid.report/pc/4611686018468129694" target="_blank">raid report</a></h4>
         <h4><a href="https://dungeon.report/pc/4611686018468129694" target="_blank">dungeon report</a></h4>
@@ -37,8 +38,8 @@
     </article>
 
     <!-- Rocket League -->
-    <h2>Rocket League Achievements</h2>
-    <h3><a href="">rl tracker</a></h3>
+    <h2 style="margin: 0px auto; margin-top: 36px;">Rocket League</h2>
+    <h3><a href="" target="_blank">rl tracker</a></h3>
 
     <img src="">
 
@@ -46,6 +47,45 @@
     <p> i have nothing else to put here tbh, im sorry, im just really bad at video game </p>
     <p> i also do ""coaching"" i guess </p>
 
+    <!-- Valorant -->
+    <h2 style="margin: 0px auto; margin-top: 36px;">Valorant</h2>
+    <h3><a href="" target="_blank">val tracker</a></h3>
+
+    <img src="">
+
     <!-- Genshin -->
+    <h2 style="margin: 0px auto; margin-top: 36px;">Genshin Impact</h2>
+
+    <img src="">
+
+    <p> i havent been playing as much since i cleared floor 12 of the abyss </p>
+    <p> however i have a cracked ayaka and here are my current team setups </p>
+    
+    <h3>team 1:</h3>
+    <h3>team 2:</h3>
+
+    <!-- Singleplayer Things -->
+    <!-- dark souls, portal speedrunning, titanfall 2 speedrunning, ... -->
 
 </main>
+
+<script>
+    var currentTime = new Date()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
+    if (minutes < 10){
+    minutes = "0" + minutes
+    }
+    if(hours > 12){
+        var visualhours = hours - 12
+    } else {
+        var visualhours = hours
+    }
+    document.getElementById("time").innerHTML = visualhours + ":" + minutes + " "
+    if(hours > 11){
+        document.getElementById("time").innerHTML += "PM"
+    } else {
+        document.getElementById("time").innerHTML += "AM"
+    }
+</script>
+</html>
